@@ -32,27 +32,24 @@ FRUTA*
 nuevaFruta(char *nombre, char *sabor, int color)
 {
       GET this = new();
-      if (this) {
-	      this->public->nombre = nombre;
-              this->public->sabor = sabor;
-              this->private->color = color;		
-              return this->public;
-      }
-      return NULL;
+      this->public->nombre = nombre;
+      this->public->sabor = sabor;
+      this->private->color = color;		
+      return this->public;
 }
 
 int 
 destruirFruta(FRUTA **fruta)
 {
-      if (!*fruta) return 0;
+      if (!fruta) return 0;
       GET this = exists(*fruta);
       if (this) {
           free(this->public);
 	  free(this->private);
           free(this);
+          *fruta = NULL;
       }
       this = NULL;
-      *fruta = NULL;
       return 1;
 }
 
