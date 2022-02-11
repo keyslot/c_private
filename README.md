@@ -1,4 +1,7 @@
 ## PRIVATE NO POO
 
-Ejemplo de elementos privados en C, no es POO (OOP).
+Ejemplo de elementos privados en C, no es POO(OOP).
+
+###Compilación
+GGC, Makefile
 

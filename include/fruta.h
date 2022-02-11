@@ -2,6 +2,7 @@
 #define FRUTA_H
 
 #include <stdlib.h>
+#include "logfile.h"
 
 struct FRUTA { 
      char *nombre;  /* Nombre de la Fruta      */

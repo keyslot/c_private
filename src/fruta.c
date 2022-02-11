@@ -14,9 +14,10 @@ typedef struct GET{
 static GET
 new(void) 
 {
-      GET this = malloc(sizeof(struct GET)); 
-      this->public = malloc(sizeof(FRUTA));
-      this->private = malloc(sizeof(FRUTA_PRIVATE));
+      GET this;
+      allocIn(&this,sizeof(struct GET)); 
+      allocIn(&this->public,sizeof(FRUTA));
+      allocIn(&this->private,sizeof(FRUTA_PRIVATE));
       this->public->private = this;
       return this;
 }
@@ -31,10 +32,13 @@ FRUTA*
 nuevaFruta(char *nombre, char *sabor, int color)
 {
       GET this = new();
-      this->public->nombre = nombre;
-      this->public->sabor = sabor;
-      this->private->color = color;		
-      return this->public;
+      if (this) {
+	      this->public->nombre = nombre;
+              this->public->sabor = sabor;
+              this->private->color = color;		
+              return this->public;
+      }
+      return NULL;
 }
 
 int 
