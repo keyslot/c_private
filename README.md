@@ -2,6 +2,6 @@
 
 Ejemplo de elementos privados en C, no es POO(OOP).
 
-###Compilación
+### Compilación
 GGC, Makefile
 
