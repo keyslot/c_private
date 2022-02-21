@@ -1,7 +1,9 @@
-## PRIVATE NO POO
+# c_private
 
-Ejemplo de elementos privados en C, no es POO(OOP).
+Ejemplo de elementos privados en C, no es POO(OOP). 
+Atributos y Métodos privados en src/
 
-### Compilación
+## Compilación
 GGC, Makefile
+
 

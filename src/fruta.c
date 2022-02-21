@@ -1,8 +1,10 @@
   /* fruta.c */
 #include "fruta.h"
 
+/***  PRIVATE:                            *****/
+
 typedef struct{
-      /* PRIVATE DATA                           */
+      /* PRIVATE DATA                         */
       int color; 
 }FRUTA_PRIVATE;
 
@@ -28,15 +30,19 @@ exists(FRUTA *fruta)
       return (fruta && fruta->private?fruta->private:NULL);
 }
 
+/***  CONSTRUCTOR:                        *****/
+
 FRUTA* 
 nuevaFruta(char *nombre, char *sabor, int color)
 {
       GET this = new();
       this->public->nombre = nombre;
-      this->public->sabor = sabor;
+      this->public->sabor  = sabor;
       this->private->color = color;		
       return this->public;
 }
+
+/***  PUBLIC:                             *****/
 
 int 
 destruirFruta(FRUTA **fruta)
@@ -54,7 +60,7 @@ destruirFruta(FRUTA **fruta)
 }
 
 int 
-obtenColor(FRUTA *fruta)
+obtenColorFruta(FRUTA *fruta)
 {
       GET this = exists(fruta);
       return this->private->color;
